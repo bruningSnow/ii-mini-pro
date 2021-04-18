@@ -67,5 +67,5 @@ $ yarn run dev:weapp
 - [Taro 2.x 与 3.x 之间 taro-iconfont-cli 注意事项](https://github.com/iconfont-cli/taro-iconfont-cli)
 
 ## 示例小程序
-### 名称：TARO组件 </br>
+### 名称：taro多端组件 </br>
 ![TARO组件](https://img-blog.csdnimg.cn/20210325104338271.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2gxMjM0NTYxMjM0NTYx,size_16,color_FFFFFF,t_70#pic_center)
