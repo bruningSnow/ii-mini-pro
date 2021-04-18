@@ -37,6 +37,12 @@
   "dependencies": {
     "@babel/runtime": "^7.7.7",
     "@tarojs/components": "3.0.17",
+    "@tarojs/plugin-platform-alipay": "^3.1.3",
+    "@tarojs/plugin-platform-jd": "^3.1.3",
+    "@tarojs/plugin-platform-qq": "^3.1.3",
+    "@tarojs/plugin-platform-swan": "^3.1.3",
+    "@tarojs/plugin-platform-tt": "^3.1.3",
+    "@tarojs/plugin-platform-weapp": "^3.1.3",
     "@tarojs/plugin-sass": "^2.2.10",
     "@tarojs/plugin-terser": "^2.2.10",
     "@tarojs/react": "3.0.17",

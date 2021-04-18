@@ -19,4 +19,8 @@ export const ComponentList = [
     title: '微信导航栏',
     url: 'title-bar/index',
   },
+  {
+    title: '页面容器',
+    url: 'page-container/index',
+  },
 ];

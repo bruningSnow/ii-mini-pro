@@ -1,0 +1,14 @@
+.index {
+  .item {
+    @include flex-between-center;
+    width: 100%;
+    height: 112px;
+    background: #ffffff;
+    border-radius: 16px;
+    font-size: 32px;
+    font-weight: 500;
+    color: #333333;
+    margin-bottom: 30px;
+    padding: 30px;
+  }
+}
