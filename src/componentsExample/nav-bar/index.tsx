@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Taro from '@tarojs/taro';
 import { AtButton } from 'taro-ui';
 import { View } from '@tarojs/components';
-import { PageContainer, TitleBar } from '@/components/index';
+import { PageContainer, NavBar } from '@/components/index';
 
 import IconFont from '../../components/iconfont';
 import styles from './index.module.scss';
@@ -24,12 +24,12 @@ const Index = () => {
     <PageContainer
       className={styles.index}
       title="微信导航栏"
-      path="/componentsExample/title-bar/index"
+      path="/componentsExample/nav-bar/index"
       hasBack={true}
     >
-      <TitleBar
+      <NavBar
         title="导航栏"
-        path="/componentsExample/title-bar/index"
+        path="/componentsExample/nav-bar/index"
         hasBack={hasBack}
         bgColor={bgColor}
         fontColor={fontColor}

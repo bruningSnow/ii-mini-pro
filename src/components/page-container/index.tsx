@@ -2,7 +2,7 @@ import React from 'react';
 import ClassName from 'classnames';
 import Taro from '@tarojs/taro';
 import { View } from '@tarojs/components';
-import { TitleBar } from '@/components/index';
+import { NavBar } from '@/components/index';
 
 import { PageContainerProps } from './interface';
 import styles from './index.module.scss';
@@ -12,7 +12,7 @@ const PageContainer = (props: PageContainerProps) => {
 
   return (
     <View className={styles.index}>
-      <TitleBar {...rest} />
+      <NavBar {...rest} />
       <View className={ClassName(styles.content, className)} style={style}>
         {children}
       </View>

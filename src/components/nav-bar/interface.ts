@@ -1,6 +1,6 @@
 import { ReactElement } from 'react';
 
-export interface TitleBarProps {
+export interface NavBarProps {
   title: string;
   path: string;
   icon?: ReactElement | string;

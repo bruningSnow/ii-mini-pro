@@ -3,13 +3,13 @@ import ClassNames from 'classnames';
 import Taro, { useDidShow } from '@tarojs/taro';
 import { View, Image } from '@tarojs/components';
 
-import { TitleBarProps } from './interface';
+import { NavBarProps } from './interface';
 import defaultBack from './back.png';
 import styles from './index.module.scss';
 
 const { setStorageSync } = Taro;
 
-const TitleBar = (props: TitleBarProps) => {
+const NavBar = (props: NavBarProps) => {
   const {
     title,
     path,
@@ -22,13 +22,13 @@ const TitleBar = (props: TitleBarProps) => {
   } = props;
   const { getStorageSync } = Taro;
 
-  const [titleBarHeight, setTitleBarHeight] = useState(0);
-  const [titleBarPaddingTop, setTitleBarPaddingTop] = useState(0);
+  const [NavBarHeight, setNavBarHeight] = useState(0);
+  const [NavBarPaddingTop, setNavBarPaddingTop] = useState(0);
   const [menuButtonHeight, setMenuButtonHeight] = useState(0);
 
   useDidShow(async () => {
     await saveRouters();
-    getTitleBarHeight();
+    getNavBarHeight();
   });
 
   const back = async () => {
@@ -70,12 +70,12 @@ const TitleBar = (props: TitleBarProps) => {
     await setStorageSync('routers', [...routers, path]);
   };
 
-  // 获取 titleBar 高度（适配不同机型）
-  const getTitleBarHeight = () => {
+  // 获取 NavBar 高度（适配不同机型）
+  const getNavBarHeight = () => {
     const menuButtonInfo = Taro.getMenuButtonBoundingClientRect(); //胶囊相关信息
     const { top, height } = menuButtonInfo;
-    setTitleBarHeight(top + height + 10);
-    setTitleBarPaddingTop(top);
+    setNavBarHeight(top + height + 10);
+    setNavBarPaddingTop(top);
     setMenuButtonHeight(height);
   };
 
@@ -88,15 +88,15 @@ const TitleBar = (props: TitleBarProps) => {
         <View>
           <View
             style={{
-              height: `${titleBarHeight}px`,
+              height: `${NavBarHeight}px`,
             }}
           ></View>
           <View
             className={styles.titleContainer}
             style={{
               background: bgColor,
-              height: `${titleBarHeight}px`,
-              paddingTop: `${titleBarPaddingTop}px`,
+              height: `${NavBarHeight}px`,
+              paddingTop: `${NavBarPaddingTop}px`,
             }}
           >
             <View
@@ -125,4 +125,4 @@ const TitleBar = (props: TitleBarProps) => {
   );
 };
 
-export default TitleBar;
+export default NavBar;

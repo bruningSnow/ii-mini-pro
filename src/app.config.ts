@@ -9,7 +9,7 @@ export default {
         'iconFont/index',
         'scroll-list/index',
         'tab-bar/index',
-        'title-bar/index',
+        'nav-bar/index',
         'page-container/index'
       ],
     },

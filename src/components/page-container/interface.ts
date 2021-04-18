@@ -1,7 +1,7 @@
 import { CSSProperties } from 'react';
-import { TitleBarProps } from '../title-bar/interface';
+import { NavBarProps } from '../nav-bar/interface';
 
-export interface PageContainerProps extends TitleBarProps {
+export interface PageContainerProps extends NavBarProps {
   className?: string;
   style?: CSSProperties;
   children?: any;
