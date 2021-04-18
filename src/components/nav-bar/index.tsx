@@ -92,7 +92,7 @@ const NavBar = (props: NavBarProps) => {
             }}
           ></View>
           <View
-            className={styles.titleContainer}
+            className={styles.navContainer}
             style={{
               background: bgColor,
               height: `${NavBarHeight}px`,
