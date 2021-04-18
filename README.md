@@ -1,4 +1,4 @@
-# ii-mini-pro（TARO 多端项目模版）
+# mult-mini-pro（TARO 多端项目模版）
 
 > 目前只适用于 H5 端及微信小程序
 
