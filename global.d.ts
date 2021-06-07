@@ -24,6 +24,10 @@ declare namespace NodeJS {
   }
 }
 
+declare interface objectType {
+  [keys: string]: any
+}
+
 declare interface ISave<T> {
   payload: Partial<T>;
 }

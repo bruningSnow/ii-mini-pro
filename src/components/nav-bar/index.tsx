@@ -1,18 +1,16 @@
 import React, { useState } from 'react';
 import ClassNames from 'classnames';
-import Taro, { useDidShow } from '@tarojs/taro';
+import { useDidShow, getCurrentInstance, getStorageSync, reLaunch, setStorageSync, getMenuButtonBoundingClientRect } from '@tarojs/taro';
 import { View, Image } from '@tarojs/components';
 
 import { NavBarProps } from './interface';
 import defaultBack from './back.png';
 import styles from './index.module.scss';
 
-const { setStorageSync } = Taro;
 
-const NavBar = (props: NavBarProps) => {
+const NavBar: React.FC<NavBarProps> = (props) => {
   const {
     title,
-    path,
     icon = '',
     classname = '',
     type = 'subPage',
@@ -20,15 +18,15 @@ const NavBar = (props: NavBarProps) => {
     bgColor = '#ffffff',
     fontColor = '#464a5a',
   } = props;
-  const { getStorageSync } = Taro;
-
   const [NavBarHeight, setNavBarHeight] = useState(0);
   const [NavBarPaddingTop, setNavBarPaddingTop] = useState(0);
   const [menuButtonHeight, setMenuButtonHeight] = useState(0);
 
   useDidShow(async () => {
     await saveRouters();
-    getNavBarHeight();
+    if (process.env.TARO_ENV === 'weapp') {
+      getNavBarHeight();
+    }
   });
 
   const back = async () => {
@@ -44,13 +42,14 @@ const NavBar = (props: NavBarProps) => {
       setStorageSync('routers', routers);
     };
 
-    Taro.reLaunch({
+    reLaunch({
       url: currentUrl,
       success,
     });
   };
 
   const saveRouters = async () => {
+    const { path = '' } = getCurrentInstance().router as objectType
     if (!path) {
       return;
     }
@@ -72,7 +71,7 @@ const NavBar = (props: NavBarProps) => {
 
   // 获取 NavBar 高度（适配不同机型）
   const getNavBarHeight = () => {
-    const menuButtonInfo = Taro.getMenuButtonBoundingClientRect(); //胶囊相关信息
+    const menuButtonInfo = getMenuButtonBoundingClientRect(); //胶囊相关信息
     const { top, height } = menuButtonInfo;
     setNavBarHeight(top + height + 10);
     setNavBarPaddingTop(top);
@@ -126,3 +125,5 @@ const NavBar = (props: NavBarProps) => {
 };
 
 export default NavBar;
+
+export { NavBarProps }

@@ -6,12 +6,11 @@ import IconFont from '../../components/iconfont';
 
 import styles from './index.module.scss';
 
-const Index = () => {
+const Index: React.FC<{}> = () => {
   return (
     <PageContainer
       className={styles.index}
       title="图标"
-      path="/componentsExample/Icon/index"
       hasBack={true}
     >
       <View className={styles.iconItem_1}>

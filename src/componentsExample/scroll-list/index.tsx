@@ -9,7 +9,7 @@ import { PageContainer, ScrollList } from '@/components/index';
 
 import styles from './index.module.scss';
 
-const Index = () => {
+const Index: React.FC<{}> = () => {
   const [loading, setLoading] = useState(false);
   const { scrollList }: mockState = useSelector(
     (state: connectState) => state.mock,
@@ -40,7 +40,6 @@ const Index = () => {
     <PageContainer
       className={styles.index}
       title="滚动列表（包含下拉刷新，加载）"
-      path="/componentsExample/scroll-list/index"
       hasBack={true}
     >
       <ScrollList

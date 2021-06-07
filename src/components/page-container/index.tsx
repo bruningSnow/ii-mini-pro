@@ -7,7 +7,7 @@ import { NavBar } from '@/components/index';
 import { PageContainerProps } from './interface';
 import styles from './index.module.scss';
 
-const PageContainer = (props: PageContainerProps) => {
+const PageContainer: React.FC<PageContainerProps> = (props) => {
   const { className, children, style, ...rest } = props;
 
   return (
@@ -21,3 +21,5 @@ const PageContainer = (props: PageContainerProps) => {
 };
 
 export default PageContainer;
+
+export { PageContainerProps }

@@ -9,7 +9,7 @@ import './index.scss';
 
 let starDistance = 0;
 
-const ScrollList = (props: ScrollListProps) => {
+const ScrollList: React.FC<ScrollListProps> = (props) => {
   const {
     children,
     className,
@@ -102,3 +102,5 @@ const ScrollList = (props: ScrollListProps) => {
   );
 };
 export default ScrollList;
+
+export { ScrollListProps }

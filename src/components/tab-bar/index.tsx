@@ -7,7 +7,7 @@ import IconFont from '@/components/iconfont';
 import { TTab, TabBarProps } from './interface';
 import styles from './index.module.scss';
 
-const TabBar = (props: TabBarProps) => {
+const TabBar: React.FC<TabBarProps> = (props) => {
   const {
     current,
     tabList,
@@ -73,3 +73,5 @@ const TabBar = (props: TabBarProps) => {
 };
 
 export default TabBar;
+
+export { TabBarProps }

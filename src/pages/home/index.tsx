@@ -11,7 +11,7 @@ interface IRenderItem {
   url: string;
 }
 
-const Index = () => {
+const Index: React.FC<{}> = () => {
   const renderItem = ({ title, url }: IRenderItem, key: number) => (
     <View
       key={key}
@@ -27,7 +27,6 @@ const Index = () => {
     <PageContainer
       className={styles.index}
       title="ii-mini-pro"
-      path="/pages/home/index"
       type="homePage"
       hasBack={false}
     >

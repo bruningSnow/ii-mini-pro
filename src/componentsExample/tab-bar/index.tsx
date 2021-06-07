@@ -34,12 +34,11 @@ const click = (current: number, data: TCurrentData) => {
   console.log('data =>', data);
 };
 
-const Index = () => {
+const Index: React.FC<{}> = () => {
   return (
     <PageContainer
       className={styles.index}
       title="底部tabber"
-      path="/componentsExample/tab-bar/index"
       hasBack={true}
     >
       <View className={styles.item}>

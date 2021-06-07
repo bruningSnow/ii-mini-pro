@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import Taro from '@tarojs/taro';
 import { AtButton } from 'taro-ui';
 import { View } from '@tarojs/components';
 import { PageContainer, NavBar } from '@/components/index';
@@ -7,7 +6,7 @@ import { PageContainer, NavBar } from '@/components/index';
 import IconFont from '../../components/iconfont';
 import styles from './index.module.scss';
 
-const Index = () => {
+const Index: React.FC<{}> = () => {
   const [hasBack, setHasBack] = useState(true);
   const [bgColor, setBgColor] = useState('#ffffff');
   const [fontColor, setFontColor] = useState('#464a5a');
@@ -24,12 +23,10 @@ const Index = () => {
     <PageContainer
       className={styles.index}
       title="微信导航栏"
-      path="/componentsExample/nav-bar/index"
       hasBack={true}
     >
       <NavBar
         title="导航栏"
-        path="/componentsExample/nav-bar/index"
         hasBack={hasBack}
         bgColor={bgColor}
         fontColor={fontColor}
